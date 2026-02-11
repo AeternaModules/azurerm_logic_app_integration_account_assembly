@@ -1,6 +1,6 @@
-variable "logic_app_integration_account_assemblys" {
+variable "logic_app_integration_account_assemblies" {
   description = <<EOT
-Map of logic_app_integration_account_assemblys, attributes below
+Map of logic_app_integration_account_assemblies, attributes below
 Required:
     - assembly_name
     - integration_account_name
@@ -18,7 +18,7 @@ EOT
     integration_account_name = string
     name                     = string
     resource_group_name      = string
-    assembly_version         = optional(string, "0.0.0.0")
+    assembly_version         = optional(string) # Default: "0.0.0.0"
     content                  = optional(string)
     content_link_uri         = optional(string)
     metadata                 = optional(map(string))
