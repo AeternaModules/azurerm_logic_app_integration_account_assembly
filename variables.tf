@@ -18,27 +18,11 @@ EOT
     integration_account_name = string
     name                     = string
     resource_group_name      = string
-    assembly_version         = optional(string) # Default: "0.0.0.0"
+    assembly_version         = optional(string)
     content                  = optional(string)
     content_link_uri         = optional(string)
     metadata                 = optional(map(string))
   }))
-  validation {
-    condition = alltrue([
-      for k, v in var.logic_app_integration_account_assemblies : (
-        v.content == null || (length(v.content) > 0)
-      )
-    ])
-    error_message = "must not be empty"
-  }
-  validation {
-    condition = alltrue([
-      for k, v in var.logic_app_integration_account_assemblies : (
-        v.metadata == null || (length(v.metadata) > 0)
-      )
-    ])
-    error_message = "must not be empty"
-  }
   # --- Unconfirmed validation candidates, derived from azurerm_logic_app_integration_account_assembly's provider source ---
   # Not auto-enabled: either a bespoke provider validator we can't safely translate,
   # or a path that crosses a list-typed block (needs its own for_each wrapping).
@@ -79,7 +63,13 @@ EOT
   #   source:    [from validate.IntegrationAccountAssemblyVersion] !ok
   # path: assembly_version
   #   source:    [from validate.IntegrationAccountAssemblyVersion] !regexp.MustCompile(`^([0-9]+.[0-9]+.[0-9]+.[0-9]+)$|^([0-9]+.[0-9]+)$`).MatchString(v)
+  # path: content
+  #   condition: length(value) > 0
+  #   message:   must not be empty
   # path: content_link_uri
   #   source:    validation.IsURLWithHTTPorHTTPS(...) - no translation rule yet, add one
+  # path: metadata[*]
+  #   condition: length(value) > 0
+  #   message:   must not be empty
 }
 
