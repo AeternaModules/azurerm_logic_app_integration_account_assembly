@@ -1,37 +1,37 @@
 output "logic_app_integration_account_assemblies_id" {
   description = "Map of id values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.id }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "logic_app_integration_account_assemblies_assembly_name" {
   description = "Map of assembly_name values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.assembly_name }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.assembly_name if v.assembly_name != null && length(v.assembly_name) > 0 }
 }
 output "logic_app_integration_account_assemblies_assembly_version" {
   description = "Map of assembly_version values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.assembly_version }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.assembly_version if v.assembly_version != null && length(v.assembly_version) > 0 }
 }
 output "logic_app_integration_account_assemblies_content" {
   description = "Map of content values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.content }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.content if v.content != null && length(v.content) > 0 }
 }
 output "logic_app_integration_account_assemblies_content_link_uri" {
   description = "Map of content_link_uri values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.content_link_uri }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.content_link_uri if v.content_link_uri != null && length(v.content_link_uri) > 0 }
 }
 output "logic_app_integration_account_assemblies_integration_account_name" {
   description = "Map of integration_account_name values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.integration_account_name }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.integration_account_name if v.integration_account_name != null && length(v.integration_account_name) > 0 }
 }
 output "logic_app_integration_account_assemblies_metadata" {
   description = "Map of metadata values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.metadata }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.metadata if v.metadata != null && length(v.metadata) > 0 }
 }
 output "logic_app_integration_account_assemblies_name" {
   description = "Map of name values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.name }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.name if v.name != null && length(v.name) > 0 }
 }
 output "logic_app_integration_account_assemblies_resource_group_name" {
   description = "Map of resource_group_name values across all logic_app_integration_account_assemblies, keyed the same as var.logic_app_integration_account_assemblies"
-  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.resource_group_name }
+  value       = { for k, v in azurerm_logic_app_integration_account_assembly.logic_app_integration_account_assemblies : k => v.resource_group_name if v.resource_group_name != null && length(v.resource_group_name) > 0 }
 }
 
